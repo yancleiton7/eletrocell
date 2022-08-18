@@ -18,13 +18,11 @@ Base = declarative_base()
 
 def create_db():
     Base.metadata.create_all(bind=engine)
-    
+
 
 #Não faço ideia ainda a necessidade dessas linhas
     
+
 def get_db():
     db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+    return db

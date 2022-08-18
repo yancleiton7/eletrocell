@@ -20,8 +20,11 @@ class TipoManutencao(BaseModel):
     nome: str
 
 class Zona(BaseModel):
-    id: int
+    id: Optional[int] = None
     nome: str
+
+    class Config():
+        orm_mode = True
 
 
 class Cliente(BaseModel):

@@ -22,6 +22,20 @@ class Zona(Base):
         zonas = db.query(Zona).all()
         return zonas
 
+    def remove(id: int):
+        db = get_db()
+        zona = db.query(Zona).filter_by(id=id).first()
+        db.delete(zona)
+        db.commit()
+        return "deletado"
+        
+    def update(zona: zn):
+        db = get_db()
+        name_zona =  zona.nome
+        zona_editada = db.query(Zona).filter_by(nome=name_zona).first()
+        zona_editada.id = zona.id 
+        db.commit()
+        return zona
 
 class TipoContrato(Base):
     __tablename__ = "tipo_contrato"

@@ -20,3 +20,14 @@ async def zonas():
 async def new_zona(zona: Zn):
     zona_criada = Zona.create(zona)
     return zona_criada
+
+@app.delete("/zona/{id}")
+async def delete_zona(id: int):
+    delete = Zona.remove(id)
+    return delete
+
+    
+@app.put("/zona")
+async def update_zona(zona: Zn):
+    zona_editada = Zona.update(zona)
+    return zona_editada

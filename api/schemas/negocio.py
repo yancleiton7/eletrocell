@@ -3,23 +3,23 @@ from typing import List, Optional
 
 
 
-class TipoContrato(BaseModel):
+class Schema_TipoContrato(BaseModel):
     id: int
     nome: str
     
-class TipoOrg(BaseModel):
+class Schema_TipoOrg(BaseModel):
     #privada /publica
     tipo: str
     
-class TipoEquipamento(BaseModel):
+class Schema_TipoEquipamento(BaseModel):
     id: int
     nome: str
     
-class TipoManutencao(BaseModel):
+class Schema_TipoManutencao(BaseModel):
     id: int
     nome: str
 
-class Zona(BaseModel):
+class Schema_Zona(BaseModel):
     id: Optional[int] = None
     nome: str
 
@@ -27,13 +27,13 @@ class Zona(BaseModel):
         orm_mode = True
 
 
-class Cliente(BaseModel):
+class Schema_Cliente(BaseModel):
     id: int
     nome: str
     contato: Optional[str]
 
 
-class Equipamento(BaseModel):
+class Schema_Equipamento(BaseModel):
     id: int
     tipo_id: int
     marca: str
@@ -45,18 +45,18 @@ class Equipamento(BaseModel):
     velocidade: Optional[str]
     
        
-class Contrato(BaseModel):
+class Schema_Contrato(BaseModel):
     id: int
     nome_empresa: str
-    natureza_id: TipoOrg
+    natureza_id: Schema_TipoOrg
     vencimento: str
-    objetos: List[Equipamento]
+    objetos: List[Schema_Equipamento]
     valor_contrato: str
     contato: str
     responsavel_nome: str
     zona_id: int
 
-class Chamado(BaseModel):
+class Schema_Chamado(BaseModel):
     id: int
     data_hora_abertura: str
     cliente_id: int

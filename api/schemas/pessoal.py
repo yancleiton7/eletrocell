@@ -1,7 +1,8 @@
 from pydantic import BaseModel
+from typing import List, Optional
 
-class Usuario(BaseModel):
-    matricula: int
+class Schema_Usuario(BaseModel):
+    matricula: Optional[int] = None
     nome: str
     cpf: int
     email: str
@@ -14,7 +15,7 @@ class Usuario(BaseModel):
     adm: bool
     
 
-class Cargo(BaseModel):
+class Schema_Cargo(BaseModel):
     id: int
-    nome: str
+    cargo: str
     

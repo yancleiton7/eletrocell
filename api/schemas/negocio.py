@@ -31,6 +31,7 @@ class Schema_Cliente(BaseModel):
     id: int
     nome: str
     contato: Optional[str]
+    natureza_id: int
 
 
 class Schema_Equipamento(BaseModel):
@@ -47,7 +48,7 @@ class Schema_Equipamento(BaseModel):
        
 class Schema_Contrato(BaseModel):
     id: int
-    nome_empresa: str
+    cliente_id: int
     natureza_id: Schema_TipoOrg
     vencimento: str
     objetos: List[Schema_Equipamento]
@@ -58,12 +59,13 @@ class Schema_Contrato(BaseModel):
 
 class Schema_Chamado(BaseModel):
     id: int
-    data_hora_abertura: str
+    tecnico_matricula: int 
     cliente_id: int
     equipamento_id: int
     tipo_manutencao_id: int
     acao: str
-    data_hora_inicio: str
-    data_hora_fim: str
-    tecnico_matricula: int 
+    data_hora_abertura: Optional[str]
+    data_hora_inicio: Optional[str]
+    data_hora_fim: Optional[str]
     observacao: str
+    status: str

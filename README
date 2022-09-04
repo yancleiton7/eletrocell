@@ -1,0 +1,117 @@
+Sistema Gerencial da Eletrocell Elevadores
+
+Necessidades:
+
+- Gerenciamento Financeiro
+    - Pagamentos
+    - Receitas
+    - Faturamento
+    - Contratos
+    - A pagar (prazos)
+    - A receber (prazos)
+
+
+- Gerenciamento de Demanda
+    - Controle de Chamados 
+        * Mapeamento de defeitos e reparos
+    - Projetos
+    - Pessoal
+
+
+## Fluxo do Sistema
+    Contato central,
+    abertura Chamados,
+    contato com tecnico,
+    manutencao realizada,
+    registro do formulario,
+
+
+
+##Arquitetura do Sistema
+
+frontend (pendente)
+api(backend)
+    -infra (camada de configuração do Bando de dados)
+
+
+
+## rotas
+tela de login
+home
+registrar novo chamado
+chamados
+chamado em aberto
+historico
+
+
+
+
+
+Contratos {
+    tipos (instalação, modernização e manutenção*(com peças, sem peça)),
+    cliente,
+    natureza_cia (publico, privado, terceirização),
+    vigencia,
+    objetos,
+        tipos (elevadores...)
+    valores (pode ser atualizado),
+    contato,
+    responsavel,
+    zona,
+    
+
+}
+
+objeto{
+    id,
+    equipamento (elevador, plataformas, escadas&esteiras rolantes, plataforma de niveladoras),
+    marca,
+    nome_modelo,
+    num_serie,
+    id_contrato,
+    local,
+    capacidade,
+    velocidade,
+
+}
+
+
+
+Registro de Chamados {
+    id,
+    data_abertura,
+    hora_abertura,
+    cliente,
+    id_elevador,
+    tipo_manutencao,
+        preventivo
+        corretivo
+            defeito
+    acao,
+    hora_inicio,
+    hora_fim,
+    tecnico,
+    observacao
+}
+
+
+Funcionário{
+    matricula,
+    nome,
+    cpf,
+    email,
+    senha,
+    telefone,
+    zona,
+    cidade,
+    funcao
+}
+
+zona{
+    id,
+    cidade,
+}
+
+funcao{
+
+}

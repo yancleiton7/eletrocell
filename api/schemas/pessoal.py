@@ -12,10 +12,9 @@ class Schema_Usuario(BaseModel):
     cidade: str
     cargo_id: str
     salario: float
-    adm: bool
+    adm: Optional[bool] = False
     
 
 class Schema_Cargo(BaseModel):
     id: int
     cargo: str
-    
